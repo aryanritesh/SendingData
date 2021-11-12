@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
      EditText name,email,phone;
-     Button check;
+     Button check,fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         email=findViewById(R.id.email);
         phone=findViewById(R.id.phone);
         check=findViewById(R.id.check);
+        fragment=findViewById(R.id.fragment);
 
         check.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,5 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        fragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,fragment1.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
